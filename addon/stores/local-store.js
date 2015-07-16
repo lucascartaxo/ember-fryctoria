@@ -11,8 +11,9 @@ import generateUniqueId from '../utils/generate-unique-id';
 export default DS.Store.extend({
   init: function() {
     var container  = this.get('container');
+    var store      = this;
 
-    var serializer = LFSerializer.create({ container: container });
+    var serializer = LFSerializer.create({ container: container, store: store });
     var adapter    = LFAdapter
       .extend({generateIdForRecord: generateUniqueId})
       .create({
@@ -27,7 +28,7 @@ export default DS.Store.extend({
   },
 
   /**
-   * Serializer is fetched via this method or adapter.serializer
+   * Serializer is finded via this method or adapter.serializer
    *
    * @method serializerFor
    * @public
