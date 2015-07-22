@@ -22,7 +22,7 @@ export default function decorateAdapter(adapter, container) {
   // updateRecord()
   // deleteRecord()
   var methods = [
-    'find', 'findAll', 'query', 'findMany',
+    'find', 'findAll', 'findQuery', 'findMany',
     'createRecord', 'updateRecord', 'deleteRecord'
   ];
 
